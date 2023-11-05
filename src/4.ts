@@ -1,14 +1,3 @@
-// const key = new Key();
-
-// const house = new MyHouse(key);
-// const person = new Person(key);
-
-// house.openDoor(person.getKey());
-
-// house.comeIn(person);
-
-// export {};
-
 class Key {
 	private signature: number;
 	constructor() {
@@ -29,10 +18,10 @@ class Person {
 
 abstract class House {
 	protected door: boolean;
-	protected key: Key;
+	// protected key: Key;
 	private tenants: Person[] = [];
 	abstract openDoor(key: Key): void;
-	constructor(key: Key) {
+	constructor(protected key: Key) {
 		this.key = key;
 	}
 	comeIn(person: Person) {
